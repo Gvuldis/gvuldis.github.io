@@ -69,7 +69,7 @@ button {
 }
 
 /* Style adjustments for the '15' number above the progress bar */
-.currentBottles {
+.current-value {
     position: absolute;
     bottom: 30px; /* Position above the progress bar */
     font-size: 1em;
