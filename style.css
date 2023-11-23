@@ -45,9 +45,42 @@ button {
     max-width: 500px;
     height: 20px;
 }
+.progress-container::before,
+.progress-container::after {
+    content: attr(data-start) " " attr(data-end);
+    position: absolute;
+    top: 100%; /* Position below the bar */
+    transform: translateY(10%); /* Adjust this value as needed to move further away from the bar */
+    color: black;
+    font-size: 1em; /* Adjust size as needed */
+    font-weight: bold;
+}
+.progress-container::before {
+    left: 0;
+    content: attr(data-start);
+}
+.current-value {
+    position: absolute;
+    top: -30px; /* Adjust this value to position above the bar */
+    font-size: 1em; /* Adjust size as needed */
+    font-weight: bold;
+}
+.progress-container::after {
+    right: 0;
+    content: attr(data-end);
+}
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent; /* Adjust size as needed */
+    border-right: 10px solid transparent; /* Adjust size as needed */
+    border-bottom: 10px solid green; /* Adjust size as needed */
+    position: absolute;
+    top: -10px; /* Adjust this value to position above the bar, just below the number */
+}
 
 .progress-bar {
-    position: absolute;
+    position: relative;
     left: 0;
     top: 0;
     height: 100%;
@@ -61,7 +94,7 @@ button {
     position: absolute;
     z-index: 2;
     color: black;
-    font-size: 0.8em;
+    font-size: 1em;
 }
 
 #startBottles {
