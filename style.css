@@ -71,13 +71,13 @@ button {
 /* Style adjustments for the '15' number above the progress bar */
 .currentBottles {
     position: absolute;
-    top: -40px; /* Position above the progress bar */
+    bottom: 30px; /* Position above the progress bar */
     font-size: 1em;
     font-weight: bold;
     background-color: #fff;
-    padding: 2px 5px;
+    padding: 2px 4px;
     border-radius: 3px;
-    left: 50%; /* Initial position, will be adjusted in JS */
+    left: 0; /* Initial position, will be adjusted in JS */
     transform: translateX(-50%); /* Center it horizontally */
 }
 #currentBottles, #goalBottles {
@@ -104,7 +104,7 @@ button {
     border-right: 5px solid transparent;
     border-top: 10px solid #4caf50;
     position: absolute;
-    bottom: 100%; /* Place it below the progress bar */
+    bottom: -20px; /* Place it below the progress bar */
     left: 0; /* Initial position, adjust it with JS */
     transform: translateX(-50%); /* Center it on its base */
     display: none; /* Hide it initially; show it when progress is made */
@@ -120,7 +120,7 @@ button {
 /* Styles for the "Pārskaitīt uz kontu" button */
 #transferButton {
     padding: 10px 20px;
-    margin-top: 22px;
+    margin-top: 50px;
     background-color: #428bca;
     border: none;
     border-radius: 4px;
