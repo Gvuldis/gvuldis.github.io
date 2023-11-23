@@ -6,7 +6,7 @@ document.getElementById('bottleForm').addEventListener('submit', function(event)
     qrCodeContainer.innerHTML = ''; // Clear any previous QR code
 
     // Assuming your second page is named 'display.html'
-    var url = 'gvuldis.github.io/display.html?bottles=' + numberOfBottles;
+    var url = 'https://gvuldis.github.io/display.html?bottles=' + numberOfBottles;
 
     new QRCode(qrCodeContainer, {
         text: url,
