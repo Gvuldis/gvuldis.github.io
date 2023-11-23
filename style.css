@@ -35,90 +35,72 @@ button {
     margin-bottom: 20px;
 }
 
-
 .progress-container {
     position: relative;
     background-color: #eee;
     border-radius: 4px;
     margin: 20px auto;
-    width: 80%; /* Narrower progress bar */
+    width: 80%;
     max-width: 500px;
     height: 20px;
+    overflow: visible; /* Ensure pseudo-elements are visible outside the container */
 }
+
+/* Styles for the numbers at the ends of the progress bar */
 .progress-container::before,
 .progress-container::after {
-    content: attr(data-start) " " attr(data-end);
     position: absolute;
-    top: 100%; /* Position below the bar */
-    transform: translateY(10%); /* Adjust this value as needed to move further away from the bar */
+    top: 100%;
     color: black;
-    font-size: 1em; /* Adjust size as needed */
+    font-size: 1em;
     font-weight: bold;
-    bottom: -30px; /* Position the numbers below the bar */
-    transform: translateX(-50%);
+    height: 1em;
+    line-height: 1em;
 }
+
 .progress-container::before {
-    left: 0;
-    content: attr(data-start);
+    left: -5%; /* Adjust so '0' is outside the progress bar */
+    content: '0'; /* Only set the content for '0' here */
 }
+
+.progress-container::after {
+    right: -5%; /* Adjust so '50' is outside the progress bar */
+    content: '50'; /* Only set the content for '50' here */
+}
+
+/* Style adjustments for the '15' number above the progress bar */
 .current-value {
     position: absolute;
-    top: -40px; /* Adjust this value to position above the bar */
-    font-size: 1em; /* Adjust size as needed */
+    top: -40px; /* Position above the progress bar */
+    font-size: 1em;
     font-weight: bold;
-    background-color: #fff; /* Background color of the label */
-    padding: 2px 5px; /* Padding inside the label */
-    border-radius: 3px; /* Rounded corners for the label */
-    left: 50%;
+    background-color: #fff;
+    padding: 2px 5px;
+    border-radius: 3px;
+    left: 50%; /* Initial position, will be adjusted in JS */
+    transform: translateX(-50%); /* Center it horizontally */
 }
-.progress-container::after {
-    right: 0;
-    content: attr(data-end);
-}
+
+/* Triangle indicator */
 .triangle {
     width: 0;
     height: 0;
-    border-left: 5px solid transparent; /* Adjust size as needed */
-    border-right: 5px solid transparent; /* Adjust size as needed */
-    border-top: 10px solid green; /* Adjust size as needed */
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 10px solid #4caf50; /* The triangle pointing downwards */
     position: absolute;
-    top: -20px;
-    left: 50%; /* Adjust this value to position above the bar, just below the number */
+    top: 20px; /* Adjust the top position to be below the progress bar */
+    left: 50%; /* Initial position, will be adjusted in JS */
+    transform: translateX(-50%); /* Center it horizontally */
 }
 
+/* Style for the progress bar itself */
 .progress-bar {
-    position: relative;
-    left: 0;
-    top: 0;
     height: 100%;
-    width: 0%; /* Dynamically update this in JavaScript */
+    width: 0%; /* Will be set in JS */
     background-color: #4caf50;
     border-radius: 4px;
-    z-index: 1;
 }
-
-#currentBottles, #startBottles, #goalBottles {
-    position: absolute;
-    z-index: 2;
-    color: black;
-    font-size: 1em;
-}
-
-#startBottles {
-    left: 0;
-    transform: translateX(-100%);
-}
-
-#currentBottles {
-    left: 50%; /* Adjust this dynamically in JavaScript to match progress */
-    transform: translateX(-50%);
-}
-
-#goalBottles {
-    right: 0;
-    transform: translateX(100%);
-}
-
 /* Styles for the "Pārskaitīt uz kontu" button */
 #transferButton {
     padding: 10px 20px;
