@@ -69,7 +69,7 @@ button {
 }
 
 /* Style adjustments for the '15' number above the progress bar */
-.current-value {
+.currentBottles {
     position: absolute;
     top: -40px; /* Position above the progress bar */
     font-size: 1em;
@@ -102,11 +102,12 @@ button {
     height: 0;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-top: 10px solid #4caf50; /* The triangle pointing downwards */
+    border-top: 10px solid #4caf50;
     position: absolute;
-    top: 20px; /* Adjust the top position to be below the progress bar */
-    left: 50%; /* Initial position, will be adjusted in JS */
-    transform: translateX(-50%); /* Center it horizontally */
+    left: 50%; /* Start in the center, will be adjusted via JS */
+    margin-left: -5px; /* Half the width of the border to center the triangle */
+    bottom: -20px; /* Position below the progress bar */
+    z-index: 2;
 }
 
 /* Style for the progress bar itself */
