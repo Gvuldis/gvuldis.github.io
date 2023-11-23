@@ -23,14 +23,6 @@ var triangle = document.createElement('div');
 triangle.classList.add('triangle');
 triangle.style.left = (progressBar.offsetWidth * (15 / 50) - 10) + 'px'; // Align with the current value
 
-var numberOfBottles = 15; // This should be the dynamic current value
-var maxBottles = 50; // This should be the maximum goal value
-
-var progressBarWidth = progressBar.offsetWidth;
-var labelPosition = (numberOfBottles / maxBottles) * progressBarWidth;
-
-currentValue.style.left = (labelPosition - currentValue.offsetWidth / 2) + 'px';
-triangle.style.left = (labelPosition - triangle.offsetWidth / 2) + 'px';
 // Append to your progress bar container
 progressBar.parentElement.appendChild(currentValue);
 progressBar.parentElement.appendChild(triangle);
