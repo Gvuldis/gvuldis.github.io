@@ -83,19 +83,6 @@ button {
 }
 
 
-/* Triangle indicator */
-.triangle {
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 10px solid #4caf50;
-    position: absolute;
-    bottom: -20px; /* Place it below the progress bar */
-    left: 0; /* Initial position, adjust it with JS */
-    transform: translateX(-50%); /* Center it on its base */
-    display: none; /* Hide it initially; show it when progress is made */
-}
 
 /* Style for the progress bar itself */
 .progress-bar {
