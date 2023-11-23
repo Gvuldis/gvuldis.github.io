@@ -35,39 +35,65 @@ button {
     margin-bottom: 20px;
 }
 
-/* Styles for the progress bar and numbers */
+
 .progress-container {
     position: relative;
     background-color: #eee;
     border-radius: 4px;
-    margin: 20px 0;
-    width: 100%;
+    margin: 20px auto;
+    width: 80%; /* Narrower progress bar */
+    max-width: 500px;
     height: 20px;
 }
 
 .progress-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
     height: 100%;
     width: 0%; /* Dynamically update this in JavaScript */
     background-color: #4caf50;
     border-radius: 4px;
+    z-index: 1;
 }
 
-#currentBottles, #goalBottles {
+#currentBottles, #startBottles, #goalBottles {
     position: absolute;
-    height: 20px;
-    line-height: 20px;
+    z-index: 2;
     color: black;
     font-size: 0.8em;
 }
 
+#startBottles {
+    left: 0;
+    transform: translateX(-100%);
+}
+
 #currentBottles {
-    left: 5px;
+    left: 50%; /* Adjust this dynamically in JavaScript to match progress */
+    transform: translateX(-50%);
 }
 
 #goalBottles {
-    right: 5px;
+    right: 0;
+    transform: translateX(100%);
 }
 
+/* Styles for the "Pārskaitīt uz kontu" button */
+#transferButton {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #428bca;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+#transferButton:hover {
+    background-color: #3071a9;
+}
 /* Media Queries for Responsive Design */
 @media screen and (max-width: 600px) {
     .container {

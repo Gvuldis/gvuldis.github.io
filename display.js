@@ -10,4 +10,16 @@ window.onload = function() {
 
     
     document.getElementById('currentBottles').innerText = numberOfBottles;
+    var currentBottlesElement = document.getElementById('currentBottles');
+    currentBottlesElement.style.left = progressPercentage + '%';
+    currentBottlesElement.innerText = numberOfBottles; // Set the current number of bottles
+
+    // Adjust the translateX value if it goes beyond the progress bar boundaries
+    if (progressPercentage > 90) {
+        currentBottlesElement.style.transform = 'translateX(-100%)';
+    } else if (progressPercentage < 10) {
+        currentBottlesElement.style.transform = 'translateX(0%)';
+    } else {
+        currentBottlesElement.style.transform = 'translateX(-50%)';
+    }
 };
