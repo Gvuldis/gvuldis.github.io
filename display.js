@@ -23,9 +23,11 @@ window.onload = function() {
     var triangle = document.createElement('div');
     triangle.classList.add('triangle');
     triangle.style.position = 'absolute';
-    triangle.style.top = progressBar.offsetTop - 10 + 'px'; // Adjust top position as needed
-    triangle.style.left = progressValuePosition + 'px';
+    triangle.style.top = (progressBar.offsetHeight + 5) + 'px'; // Position just below the progress bar
+    triangle.style.left = '50%'; // Start at the center
     progressBarContainer.appendChild(triangle);
+    var triangleOffset = progressBar.offsetLeft + (progressValuePosition - triangle.offsetWidth / 2);
+triangle.style.left = triangleOffset + 'px';
 
     // Ensure the 'current number of bottles' element doesn't overflow the progress container
     if (progressPercentage > 90) {
