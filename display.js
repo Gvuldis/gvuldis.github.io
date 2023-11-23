@@ -13,6 +13,10 @@ window.onload = function() {
     // Create and position the 'current number of bottles' element
     var currentBottlesElement = document.getElementById('currentBottles');
     var progressBar = document.getElementById('progressBar');
+    if (!progressBar) {
+        console.error('Progress bar element not found!');
+        return; 
+    }
     var progressBarContainer = progressBar.parentElement;
     var progressContainerWidth = progressBarContainer.offsetWidth;
     var progressValuePosition = progressPercentage * progressContainerWidth / 100 - currentBottlesElement.offsetWidth / 2;
