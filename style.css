@@ -104,10 +104,10 @@ button {
     border-right: 5px solid transparent;
     border-top: 10px solid #4caf50;
     position: absolute;
-    left: 50%; /* Start in the center, will be adjusted via JS */
-    margin-left: -5px; /* Half the width of the border to center the triangle */
-    bottom: -20px; /* Position below the progress bar */
-    z-index: 2;
+    bottom: 100%; /* Place it below the progress bar */
+    left: 0; /* Initial position, adjust it with JS */
+    transform: translateX(-50%); /* Center it on its base */
+    display: none; /* Hide it initially; show it when progress is made */
 }
 
 /* Style for the progress bar itself */
