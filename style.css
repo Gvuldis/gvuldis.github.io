@@ -80,21 +80,7 @@ button {
     left: 0; /* Initial position, will be adjusted in JS */
     transform: translateX(-50%); /* Center it horizontally */
 }
-#currentBottles, #goalBottles {
-    position: absolute;
-    height: 20px;
-    line-height: 20px;
-    color: black;
-    font-size: 0.8em;
-}
 
-#currentBottles {
-    left: 5px;
-}
-
-#goalBottles {
-    right: 5px;
-}
 
 /* Triangle indicator */
 .triangle {
