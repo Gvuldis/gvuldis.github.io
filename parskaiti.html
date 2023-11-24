@@ -10,12 +10,20 @@
     <div class="container">
         <h1>Pārskaitīt Līdzekļus</h1>
         <p>Izvēlies banku, uz kuru vēlies pārskaitīt līdzekļus:</p>
-        <ul class="bank-list">
-            <li><button onclick="transfer('Swedbank')">Swedbank</button></li>
-            <li><button onclick="transfer('SEB Bank')">SEB Bank</button></li>
-            <li><button onclick="transfer('Luminor')">Luminor</button></li>
-            <li><button onclick="transfer('Citadele')">Citadele</button></li>
-        </ul>
+        <div class="bank-list">
+            <button class="bank-button" onclick="transfer('Swedbank')">
+                <img src="swed.png" alt="Swedbank" />
+            </button>
+            <button class="bank-button" onclick="transfer('SEB Bank')">
+                <img src="seb.png" alt="SEB Bank" />
+            </button>
+            <button class="bank-button" onclick="transfer('Luminor')">
+                <img src="luminor.jpg" alt="Luminor" />
+            </button>
+            <button class="bank-button" onclick="transfer('Citadele')">
+                <img src="citadele.png" alt="Citadele" />
+            </button>
+        </div>
     </div>
     <script src="bankTransfer.js"></script>
 </body>
